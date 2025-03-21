@@ -1,0 +1,14 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "files.autoSave": "onFocusChange",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "eslint.autoFixOnSave": "explicit",
+        "tslint.autoFixOnSave": "explicit"
+    },
+    "prettier.singleQuote": true
+}
