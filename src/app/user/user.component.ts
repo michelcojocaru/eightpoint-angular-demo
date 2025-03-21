@@ -1,5 +1,13 @@
-import { Component, Input } from '@angular/core';
-
+import {
+  Component,
+  computed,
+  EventEmitter,
+  Input,
+  input,
+  Output,
+  output,
+} from '@angular/core';
+import { User } from './user.model';
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -8,14 +16,15 @@ import { Component, Input } from '@angular/core';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  @Input() avatar!: string;
-  @Input() name!: string;
+  @Input({ required: true }) user!: User;
+  @Input({ required: true }) selected!: boolean;
+  select = output<string>();
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
   onSelectUser() {
-    console.log('User selected');
+    this.select.emit(this.user.id);
   }
 }
